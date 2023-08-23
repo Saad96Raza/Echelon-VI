@@ -27,8 +27,6 @@ const dirApp = path.join(__dirname,'app')
 const dirAssets = path.join(__dirname,'assets')
 const dirStyles = path.join(__dirname,'styles')
 const dirImages = path.join(__dirname,'images')
-const dir3D = path.join(__dirname,'3D')
-const dirSounds = path.join(__dirname,'sounds')
 const dirNode = 'node_modules'
 
 
@@ -49,8 +47,6 @@ module.exports = {
         dirAssets,
         dirStyles,
         dirImages,
-        dir3D,
-        dirSounds,
         dirNode,
 
       ]
@@ -71,21 +67,13 @@ module.exports = {
         patterns:[
 
         
-          {
-            from: './3D',
-            to:'',
-            noErrorOnMissing: true
-          },
+  
           {
             from: './images',
             to:'',
             noErrorOnMissing: true
-          },
-          {
-            from: './sounds',
-            to:'',
-            noErrorOnMissing: true
           }
+         
 
 
         ]
