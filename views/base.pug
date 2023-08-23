@@ -1,0 +1,27 @@
+block variables
+doctype html
+html(lang="en")
+  head
+    meta(charset='UTF-8')
+    title Echelon VI
+    meta(name='viewport' content='width=device-width,initial-scale=1')
+    meta(name='description' content='')
+    link(rel='apple-touch-icon' sizes='180x180' href='apple-touch-icon.png')
+    link(rel='icon' type='image/png' sizes='32x32' href='favicon-32x32.png')
+    link(rel='icon' type='image/png' sizes='16x16' href='favicon-16x16.png')
+    link(rel='manifest' href='site.webmanifest')
+    link( type="text/css" rel="stylesheet", href="main.css")
+
+    body
+      .content#content(data-template=template)
+      .preloader-1
+        .preloader-wrapper-right.loader
+        .preloader-wrapper-left.loader
+        .preloader-line-1.line
+        .preloader-line-2.line
+        .number-wrapper
+          .number 0
+      block content
+    canvas      
+    script( type="text/javascript"  src="main.js")
+  

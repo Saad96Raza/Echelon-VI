@@ -4,3 +4,56 @@
     box-sizing: border-box;
 }
 
+
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #303030;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #a5a5a5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+
+
+
+
+html.lenis {
+height: auto;
+}
+
+.lenis.lenis-smooth {
+scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+} 
+
+@import './pages/section1.scss';
+@import './pages/section2.scss';
+@import './pages/section3.scss';
+@import './pages/section4.scss';
+@import './pages/canvas.scss';
+@import './effects/text.scss';
+@import './effects/preloader.scss';
+

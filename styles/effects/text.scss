@@ -1,0 +1,64 @@
+:root{
+
+--circleLine: 570;
+--circleRotate:360deg;
+
+}
+
+
+.block{
+text-transform: capitalize;
+display: inline-flex;
+overflow: hidden;
+}
+
+.block span{
+
+transform: translateX(-100%);
+
+}
+
+
+
+.intersect span{
+opacity: 0;
+}
+
+
+.block__reveal{
+
+display: inline-flex;
+overflow: hidden;
+
+}
+
+.block__reveal span{
+
+transform: translateX(-100%);
+display: block;
+
+}
+
+
+
+.circle{
+
+fill: transparent;
+stroke:#9e0012 ;
+stroke-dasharray: 570;
+stroke-dashoffset: var(--circleLine);
+
+}
+
+
+svg{
+overflow: hidden;
+}
+
+
+.fade{
+opacity: 0;
+transform: translateY(20px);
+}
+
+

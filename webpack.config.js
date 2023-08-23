@@ -27,6 +27,8 @@ const dirApp = path.join(__dirname,'app')
 const dirAssets = path.join(__dirname,'assets')
 const dirStyles = path.join(__dirname,'styles')
 const dirImages = path.join(__dirname,'images')
+const dir3D = path.join(__dirname,'3D')
+const dirSounds = path.join(__dirname,'sounds')
 const dirNode = 'node_modules'
 
 
@@ -47,6 +49,8 @@ module.exports = {
         dirAssets,
         dirStyles,
         dirImages,
+        dir3D,
+        dirSounds,
         dirNode,
 
       ]
@@ -66,11 +70,23 @@ module.exports = {
 
         patterns:[
 
+        
           {
-            from: './assets',
+            from: './3D',
+            to:'',
+            noErrorOnMissing: true
+          },
+          {
+            from: './images',
+            to:'',
+            noErrorOnMissing: true
+          },
+          {
+            from: './sounds',
             to:'',
             noErrorOnMissing: true
           }
+
 
         ]
 
@@ -86,26 +102,26 @@ module.exports = {
 
 
 
-      new ImageMinimizerPlugin({
+      // new ImageMinimizerPlugin({
 
-        minimizer:{
+      //   minimizer:{
 
-          implementation: ImageMinimizerPlugin.imageminMinify,
-          options: {
+      //     implementation: ImageMinimizerPlugin.imageminMinify,
+      //     options: {
 
-            plugins:[
+      //       plugins:[
 
-              ["gifsicle", { interlaced: true }],
-              ["jpegtran", { progressive: true }],
-              ["optipng", { optimizationLevel: 5 }],
+      //         ["gifsicle", { interlaced: true }],
+      //         ["jpegtran", { progressive: true }],
+      //         ["optipng", { optimizationLevel: 5 }],
 
-            ],
+      //       ],
 
-          },
+      //     },
 
-        },
+      //   },
 
-      }),
+      // }),
 
 
 
@@ -131,7 +147,8 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options:{
               publicPath:''
-            }
+          }
+
           },
 
           {
@@ -145,34 +162,34 @@ module.exports = {
           {
             loader: "postcss-loader",
           },
-
+          
           ],
 
           },
 
           {
-            test: /\.(png|jpe?g|svg|gif|webp)$/i,
+            test: /\.(png|jpe?g|svg|gif|webp|fbx|gltf|glb|mp3)$/i,
             loader:'file-loader',
             options:{
               name(file){
                   return '[hash].[ext]'
-              }
+              },
             }
           },
-
+          
           {
              test:/\.pug$/,use:['pug-loader']
           },
 
 
-          {
-            test: /\.(jpe?g|png|gif|svg)$/i,
-            use: [
-              {
-                loader: ImageMinimizerPlugin.loader,
-              },
-            ],
-          },
+          // {
+          //   test: /\.(jpe?g|png|gif|svg)$/i,
+          //   use: [
+          //     {
+          //       loader: ImageMinimizerPlugin.loader,
+          //     },
+          //   ],
+          // },
 
           {
 
@@ -192,7 +209,7 @@ module.exports = {
       },
 
       optimization:{
-        minimize: true,
+        minimize: false,
         minimizer: [new TerserPlugin()],
       },
 
