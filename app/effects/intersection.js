@@ -7,6 +7,7 @@ this.scrollText = document.querySelectorAll(".intersect");
 
 this.scrollTextLetter = document.querySelectorAll(".intersect");
 
+
 this.scrollBlockReveal =  document.querySelectorAll('.block__reveal')
 this.scrollTextLetter.forEach(element=>element.innerHTML = element.textContent.replace(/\S/g,"<span>$&</span>"))
 
